@@ -1,0 +1,27 @@
+
+Proyecto Santiago Uribe Pastás
+
+1. Crear base de datos
+create keyspace bd13 with replication = {'class' : 'SimpleStrategy', 'replication_factor': 1};
+
+2.Crear tablas
+create table usuario (idU int, nombre varchar, correo varchar, contrasena varchar, primary key(idU));
+
+create table carrito (idC int, estado int, cliente int, valorfinal int, primary key(idC));
+
+create table compra (idS int, nro_carrito int, prod int, cantidad int, primary key(idS, nro_carrito));
+
+create table producto (idP int, nombre varchar, descripcion varchar, precio int, peso int, tamano varchar, primary key(idP));
+
+3.Llenado del catalogo
+insert into producto (idP, nombre, descripcion, precio, peso, tamano) values (1, 'Play 5', 'Consola de videojuegos', 200000, 2, '30x5x30 cm');
+
+insert into producto (idP, nombre, descripcion, precio, peso, tamano) values (2, 'Air Jordan', 'Calzado', 1000000, 2, 'Tamano medio');
+
+insert into producto (idP, nombre, descripcion, precio, peso, tamano) values (3, 'Estufa electrica', 'Hogar', 500000, 100, '120x50x50 cm');
+
+insert into producto (idP, nombre, descripcion, precio, peso, tamano) values (4, 'Resaltadores', 'Estudio', 8000, 1, 'Tamano pequeno');
+
+
+
+
